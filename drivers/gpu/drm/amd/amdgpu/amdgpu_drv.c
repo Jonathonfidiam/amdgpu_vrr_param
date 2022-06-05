@@ -131,6 +131,7 @@ int amdgpu_vm_fault_stop;
 int amdgpu_vm_debug;
 int amdgpu_vm_update_mode = -1;
 int amdgpu_exp_hw_support;
+int amdgpu_vrr;
 int amdgpu_dc = -1;
 int amdgpu_sched_jobs = 32;
 int amdgpu_sched_hw_submission = 2;
@@ -238,6 +239,13 @@ module_param_named(moverate, amdgpu_moverate, int, 0600);
  */
 MODULE_PARM_DESC(audio, "Audio enable (-1 = auto, 0 = disable, 1 = enable)");
 module_param_named(audio, amdgpu_audio, int, 0444);
+
+/**
+ * DOC: variable_refresh (int)
+ * set variable_refresh (1 = enable, 0 = disable)
+ * */
+MODULE_PARM_DESC(vrr, "Variable Refresh enable (1 = enable, 0 = disable, -1 = auto)");
+module_param_named(vrr, amdgpu_vrr, int, 0444);
 
 /**
  * DOC: disp_priority (int)
